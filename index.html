@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoStream</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN SUPERIOR -->
+    <header class="header">
+        <div class="header-left">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-play logo-icon"></i>
+                <span>VideoStream</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">Inicio</a>
+                <a href="#">Explorar</a>
+                <a href="#">Mi lista</a>
+            </nav>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="header-right">
+            <button class="icon-btn" title="Notificaciones"><i class="fa-regular fa-bell"></i></button>
+            <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (FLEXBOX) -->
+    <main class="main-container">
+
+        <!-- COLUMNA IZQUIERDA / PRINCIPAL -->
+        <section class="primary-content">
+
+            <!-- Reproductor Principal -->
+            <div class="video-player-container">
+                <video id="mainVideo" controls poster="https://picsum.photos/id/1018/1000/560">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                        type="video/mp4">
+                    Tu navegador no soporta el reproductor de video.
+                </video>
+            </div>
+
+            <!-- Info del Video Principal -->
+            <div class="video-info">
+                <h1 class="video-title">Lagos y montañas</h1>
+                <p class="video-meta">95 mil visualizaciones • 10 abr 2024</p>
+
+                <!-- Barra de Acciones (Interacción 1) -->
+                <div class="actions-bar">
+                    <button class="action-btn" id="likeBtn">
+                        <i class="fa-regular fa-thumbs-up" id="likeIcon"></i>
+                        <span id="likeCount">4,8 K</span>
+                    </button>
+
+                    <button class="action-btn">
+                        <i class="fa-regular fa-thumbs-down"></i>
+                        <span>120</span>
+                    </button>
+
+                    <button class="action-btn">
+                        <i class="fa-solid fa-share"></i>
+                        <span>Compartir</span>
+                    </button>
+
+                    <button class="action-btn" id="addToQueueMainBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Añadir a la cola</span>
+                    </button>
+
+                    <button class="action-btn icon-only"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+            </div>
+
+            <!-- Canal y Suscripción (Interacción 2) -->
+            <div class="channel-section">
+                <div class="channel-info">
+                    <div class="channel-avatar"><i class="fa-solid fa-circle-user"></i></div>
+                    <div>
+                        <h3 class="channel-name">VideoStream</h3>
+                        <p class="channel-subs" id="subCountText">1,2 M de suscriptores</p>
+                    </div>
+                </div>
+                <button class="subscribe-btn" id="subscribeBtn">Suscribirse</button>
+            </div>
+
+            <!-- Descripción -->
+            <div class="video-description">
+                <p id="descText">Un recorrido por los lagos más hermosos de la Patagonia y sus montañas principales.
+                    Consejos, rutas y paisajes imperdibles para tu próxima aventura.</p>
+                <button class="toggle-desc-btn" id="toggleDescBtn">Mostrar más <i
+                        class="fa-solid fa-chevron-down"></i></button>
+            </div>
+
+            <!-- Sección Más Videos -->
+            <div class="more-videos-section">
+                <h2>Más videos</h2>
+                <div class="videos-grid">
+
+                    <!-- Card de video con hover autoplay (Interacción 4) -->
+                    <div class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1036/400/225">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="duration">6:15</span>
+                        </div>
+                        <h4>Rutas de trekking</h4>
+                        <p>80 mil visualizaciones</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1015/400/225">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="duration">4:32</span>
+                        </div>
+                        <h4>Lagos y montañas</h4>
+                        <p>95 mil visualizaciones</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1024/400/225">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="duration">3:50</span>
+                        </div>
+                        <h4>Fauna patagónica</h4>
+                        <p>60 mil visualizaciones</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="thumbnail-wrapper">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1039/400/225">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="duration">4:18</span>
+                        </div>
+                        <h4>Consejos para viajar</h4>
+                        <p>110 mil visualizaciones</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- BARRA LATERAL (COLA Y RECOMENDADOS) -->
+        <aside class="sidebar-content">
+
+            <!-- Siguiente en la cola -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <h3>Siguiente en la cola</h3>
+                    <button class="clear-btn" id="clearQueueBtn">Limpiar cola</button>
+                </div>
+
+                <div class="queue-list" id="queueList">
+                    <div class="side-item">
+                        <div class="side-thumb">
+                            <img src="https://picsum.photos/id/1036/120/70" alt="Explorando la Patagonia">
+                            <span class="mini-duration">6:15</span>
+                        </div>
+                        <div class="side-details">
+                            <h4>Explorando la Patagonia</h4>
+                            <p>VideoStream</p>
+                            <p>120 mil visualizaciones</p>
+                        </div>
+                        <button class="remove-item-btn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="side-item">
+                        <div class="side-thumb">
+                            <img src="https://picsum.photos/id/1080/120/70" alt="Comida callejera">
+                            <span class="mini-duration">4:10</span>
+                        </div>
+                        <div class="side-details">
+                            <h4>Comida callejera</h4>
+                            <p>VideoStream</p>
+                            <p>98 mil visualizaciones</p>
+                        </div>
+                        <button class="remove-item-btn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="side-item">
+                        <div class="side-thumb">
+                            <img src="https://picsum.photos/id/1040/120/70" alt="Ciudades del mundo">
+                            <span class="mini-duration">8:12</span>
+                        </div>
+                        <div class="side-details">
+                            <h4>Ciudades del mundo</h4>
+                            <p>VideoStream</p>
+                            <p>210 mil visualizaciones</p>
+                        </div>
+                        <button class="remove-item-btn"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recomendados -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <h3>Recomendados</h3>
+                </div>
+
+                <div class="recommended-list">
+
+                    <div class="side-item">
+                        <div class="side-thumb preview-container">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1036/120/70">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="mini-duration">5:20</span>
+                        </div>
+                        <div class="side-details">
+                            <h4>Rutas de trekking</h4>
+                            <p>VideoStream</p>
+                            <p>80 mil visualizaciones</p>
+                        </div>
+                        <!-- Interacción 3: Añadir a la cola -->
+                        <button class="add-queue-btn" data-title="Rutas de trekking" data-views="80 mil visualizaciones"
+                            data-duration="5:20" data-img="https://picsum.photos/id/1036/120/70">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="side-item">
+                        <div class="side-thumb preview-container">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1024/120/70">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="mini-duration">3:50</span>
+                        </div>
+                        <div class="side-details">
+                            <h4>Fauna patagónica</h4>
+                            <p>VideoStream</p>
+                            <p>60 mil visualizaciones</p>
+                        </div>
+                        <button class="add-queue-btn" data-title="Fauna patagónica" data-views="60 mil visualizaciones"
+                            data-duration="3:50" data-img="https://picsum.photos/id/1024/120/70">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="side-item">
+                        <div class="side-thumb preview-container">
+                            <video class="preview-video" muted loop poster="https://picsum.photos/id/1039/120/70">
+                                <source
+                                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <span class="mini-duration">4:18</span>
+                        </div>
+                        <div class="side-details">
+                            <h4>Atardeceres increíbles</h4>
+                            <p>VideoStream</p>
+                            <p>72 mil visualizaciones</p>
+                        </div>
+                        <button class="add-queue-btn" data-title="Atardeceres increíbles"
+                            data-views="72 mil visualizaciones" data-duration="4:18"
+                            data-img="https://picsum.photos/id/1039/120/70">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- NOTIFICACIÓN TOAST (INTERACCIÓN 3) -->
+    <div class="toast-notification" id="toast">
+        <div class="toast-content">
+            <i class="fa-solid fa-circle-check"></i>
+            <span id="toastMessage">Video añadido a la cola</span>
+        </div>
+        <button class="toast-close" id="closeToast"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
